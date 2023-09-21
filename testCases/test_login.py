@@ -1,5 +1,4 @@
 import time
-from selenium import webdriver
 from pageObjects.LoginPage import LoginPage
 from utilities.readProperties import ReadConfig
 from utilities.customLogger import LogGen
@@ -50,5 +49,3 @@ class Test_001_Login:
             self.driver.close()
             self.logger.error("*************Login test is failed*********")
             assert False
-
-
