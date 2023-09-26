@@ -19,3 +19,17 @@ class ReadConfig():
     def getPassword():
         password = config.get('common info', 'password')
         return password
+
+    @staticmethod
+    def getFname():
+        fname = config.get('common info', 'fname')
+        return fname
+
+    @staticmethod
+    def getLname():
+        lname = config.get('common info', 'lname')
+        return lname
+    @staticmethod
+    def getEmail():
+        email = config.get('common info', 'email')
+        return email
