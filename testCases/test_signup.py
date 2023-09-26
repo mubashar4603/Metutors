@@ -2,8 +2,8 @@ import time
 from pageObjects.SignupStudent import SignupStudent
 from utilities.readProperties import ReadConfig
 from utilities.randomData import randomGenerate
+from utilities.getOTP import getOTP
 from utilities.customLogger import LogGen
-
 
 class Test_000_Login:
     baseURL = ReadConfig.getAppURL()
@@ -28,8 +28,18 @@ class Test_000_Login:
         self.signup_student.setPhone(randomGenerate.generate_random_phone_number())
         self.signup_student.setPassword(self.password)
         self.driver.execute_script('window.scrollBy(0,500);')
-        time.sleep(5)
+        time.sleep(2)
         self.signup_student.checkBox()
+        time.sleep(2)
+        self.signup_student.clickCreate()
+        time.sleep(15)
+        # req_otp = getOTP.access_email(username = 'mubashar4603@gmail.com', password = 'lfst wacj qiwp wclj')
+        req_otp = 4
+        self.signup_student.putOTP(req_otp)
+        time.sleep(10)
+
+
+
 
         time.sleep(10)
 

@@ -12,6 +12,7 @@ class SignupStudent:
     textbox_Cpassword_id = 'pass2'
     checkbox_selector = 'span[class="mat-checkbox-inner-container"]'
     create_button_seletor = 'button[type="submit"]'
+    put_otp_id = 'input[class="otp-input ng-valid ng-star-inserted ng-touched ng-dirty"]'
     def __init__(self, driver):
         self.driver = driver
     def clickSignup(self):
@@ -30,4 +31,6 @@ class SignupStudent:
     def checkBox(self):
         self.driver.find_element(By.CSS_SELECTOR, self.checkbox_selector).click()
     def clickCreate(self):
-        self.driver.find_element(By.CSS_SELECTOR, self.create_button_seletor)
+        self.driver.find_element(By.CSS_SELECTOR, self.create_button_seletor).click()
+    def putOTP(self, otp):
+        self.driver.find_element(By.CSS_SELECTOR, self.put_otp_id).send_keys(otp)
