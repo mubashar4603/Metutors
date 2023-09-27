@@ -32,16 +32,30 @@ class Test_000_Login:
         self.signup_student.checkBox()
         time.sleep(2)
         self.signup_student.clickCreate()
-        time.sleep(15)
-        # req_otp = getOTP.access_email(username = 'mubashar4603@gmail.com', password = 'lfst wacj qiwp wclj')
-        req_otp = 4
-        self.signup_student.putOTP(req_otp)
         time.sleep(10)
+        req_otp = getOTP.access_email(username = 'mubashar4603@gmail.com', password = 'lfst wacj qiwp wclj')
+        print("outtttttpottttt:", req_otp)
+        fetched_otp = str(req_otp)
+        print("ouuuuuttttputtttt:", fetched_otp)
+        self.signup_student.putOTP(fetched_otp)
+        time.sleep(4)
+        self.signup_student.verifyOTP()
+        time.sleep(2)
+        actual_title = self.driver.title
+        if actual_title == "Sign in - MEtutors":
+            assert True
+            self.driver.close()
+            self.logger.info("************* Student_signup test is passed*********")
+        else:
+            self.driver.save_screenshot("/home/mubashar4603/PycharmProjects/Metutors/Screenshots/" + "test_login.png")
+            self.driver.close()
+            self.logger.error("************* Student_signup test is failed*********")
+            assert False
 
 
 
 
-        time.sleep(10)
+
 
 
 

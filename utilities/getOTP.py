@@ -55,6 +55,6 @@ class getOTP:
             #     print(otp)
             # else:
             #     print("OTP not found.")
-        return match
+        return match[required_digit]
 
 # access_email(username = 'mubashar4603@gmail.com', password = 'lfst wacj qiwp wclj')
