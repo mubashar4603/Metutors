@@ -16,6 +16,7 @@ class Test_001_Login:
         self.driver = setup
         self.driver.get(self.baseURL)
         self.driver.maximize_window()
+        time.sleep(2)
         actual_title = self.driver.title
         if actual_title == "Sign in - MEtutors":
             assert True
