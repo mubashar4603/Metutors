@@ -21,6 +21,8 @@ class SignupStudent:
 
     def clickSignup(self):
         self.driver.find_element(By.CSS_SELECTOR, self.signup_button_selector).click()
+    def clickTeacher(self):
+        self.driver.find_element(By.XPATH, '/html/body/metutors-root/div/div/metutors-signup/div/div/div[1]/form/div/div[1]/div/div[2]/button').click()
 
     def setFname(self, fname):
         self.driver.find_element(By.ID, self.textbox_fname_id).send_keys(fname)
