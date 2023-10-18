@@ -7,4 +7,4 @@ class Test_002_Login:
     password = ReadConfig.getPassword()
     def test_courseBooking(self):
         self.logger.info("************* Test_000_Login *********")
-        self.logger.info("************* Verifying student signup ********")
+        self.logger.info("************* Verifying student course booking ********")
