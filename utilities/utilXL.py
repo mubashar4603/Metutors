@@ -3,7 +3,7 @@ import openpyxl
 def getRows(file, sheetName):
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheetName]
-    return (sheet.max_row)
+    return sheet.max_row
 
 def getColumns(file, sheetName):
     workbook = openpyxl.load_workbook(file)
@@ -18,5 +18,5 @@ def readData(file, sheetName, rowno, columnno):
 def writeData(file, sheetName, rowno, columnno, data):
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheetName]
-    return sheet.cell(row=rowno, column=columnno, value=data)
     workbook.save(file)
+    return sheet.cell(row=rowno, column=columnno, value=data)

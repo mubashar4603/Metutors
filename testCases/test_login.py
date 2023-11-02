@@ -49,4 +49,6 @@ class Test_001_Login:
             self.driver.save_screenshot("/home/mubashar4603/PycharmProjects/Metutors/Screenshots/" + "test_login.png")
             self.driver.close()
             self.logger.error("*************Login test is failed*********")
+            self.logger.error("___")
             assert False
+

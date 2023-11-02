@@ -4,6 +4,7 @@ from utilities.readProperties import ReadConfig
 from utilities.customLogger import LogGen
 from utilities import utilXL
 
+
 class Test_002_Login_DDT:
     baseURL = ReadConfig.getAppURL()
     path = "/home/mubashar4603/PycharmProjects/Metutors/TestData/metutor.xlsx"
@@ -18,10 +19,10 @@ class Test_002_Login_DDT:
         time.sleep(3)
         self.lp = LoginPage(self.driver)
         self.rows = utilXL.getRows(self.path, 'Sheet1')
-        print("Total number of rows in excel:",self.rows)
+        print("Total number of rows in excel:", self.rows)
         lst_status = []
 
-        for r in range(2, self.rows+1):
+        for r in range(2, self.rows + 1):
             self.user = utilXL.readData(self.path, 'Sheet1', r, 1)
             self.password = utilXL.readData(self.path, 'Sheet1', r, 2)
             self.exp = utilXL.readData(self.path, 'Sheet1', r, 3)
@@ -54,8 +55,6 @@ class Test_002_Login_DDT:
             self.driver.close()
             assert True
         else:
-            self.logger.info("***** Lgin DDT test failed ******")
+            self.logger.info("***** Login DDT test failed ******")
             self.driver.close()
             assert False
-
-
