@@ -11,6 +11,7 @@ class Test_002_Login:
     username = ReadConfig.getUsername()
     password = ReadConfig.getPassword()
     logger = LogGen.loggen()
+
     def test_courseBooking(self, setup):
         self.logger.info("************* Test_000_Login *********")
         self.logger.info("************* Verifying student course booking ********")
@@ -36,5 +37,3 @@ class Test_002_Login:
         time.sleep(3)
         self.course_book.setDate(randomGenerate.generate_random_date())
         time.sleep(5)
-
-

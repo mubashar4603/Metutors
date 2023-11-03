@@ -31,7 +31,7 @@ class randomGenerate():
         tomorrow = today + datetime.timedelta(days=1)
 
         # Generate a random number of days between 1 and 365 (1 year)
-        random_days = random.randint(1, 365)
+        random_days = random.randint(1, 30)
 
         # Calculate the random date by adding the random number of days to tomorrow
         random_date = tomorrow + datetime.timedelta(days=random_days)
@@ -42,4 +42,4 @@ class randomGenerate():
 # Example usage:
 # random_date = random_date_after_tomorrow()
 # print("Random Date After Tomorrow:", random_date)
-# print(randomGenerate.generate_random_date())
+print(randomGenerate.generate_random_date())

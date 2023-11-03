@@ -1,4 +1,3 @@
-# import time
 import time
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
@@ -74,10 +73,12 @@ class CourseBooking:
         self.driver.find_element(By.ID, 'mat-input-0').click()
         time.sleep(2)
         self.driver.find_element(By.ID, 'mat-input-0').send_keys(date)
-        time.sleep(3)
+        self.driver.find_element(By.ID, 'mat-input-0').send_keys(Keys.ESCAPE)
+        time.sleep(2)
 
-        # self.driver.find_element(By.ID, 'mat-input-1').click()
-        # time.sleep(2)
-        # self.driver.find_element(By.ID, 'mat-input-1').send_keys(date)
+        self.driver.find_element(By.ID, 'mat-input-1').click()
+        time.sleep(2)
+        self.driver.find_element(By.ID, 'mat-input-1').send_keys(date)
+        self.driver.find_element(By.ID, 'mat-input-1').send_keys(Keys.ESCAPE)
 
 

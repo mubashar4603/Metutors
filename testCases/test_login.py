@@ -52,3 +52,13 @@ class Test_001_Login:
             self.logger.error("___")
             assert False
 
+    # def login(self, setup):
+    #     self.logger.info("*************Verifying login test*********")
+    #     self.driver = setup
+    #     self.driver.get(self.baseURL)
+    #     self.driver.maximize_window()
+    #     time.sleep(3)
+    #     self.lp = LoginPage(self.driver)
+    #     self.lp.setUsername(self.username)
+    #     self.lp.setPassword(self.password)
+    #     self.lp.clickLogin()
